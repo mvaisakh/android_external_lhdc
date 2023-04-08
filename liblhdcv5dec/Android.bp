@@ -1,0 +1,50 @@
+
+cc_prebuilt_library_shared {
+    name: "liblhdcv5dec",
+    
+    export_include_dirs: ["include"],
+    arch: {
+        arm: {
+            srcs: ["libs/armeabi-v7a/liblhdcv5dec.so",],
+        },
+        arm64: {
+            srcs: ["libs/arm64-v8a/liblhdcv5dec.so",],
+        },
+    },
+
+    strip: {
+        none:true,
+    },
+
+    shared_libs: [
+        "liblog",
+        "libstdc++",
+    ],
+}
+
+cc_library_shared {
+    name: "liblhdcv5BT_dec",
+    //vendor_available: true,
+    //vndk: {
+    //    enabled: true,
+    //},
+    arch: {
+        arm: {
+            instruction_set: "arm",
+        },
+    },
+    export_include_dirs: ["inc"],
+    local_include_dirs: ["inc", "include", ],
+    srcs: [
+        "src/lhdcv5BT_dec.c",
+    ],
+    // -D_32BIT_FIXED_POINT should be added to cflags for devices without a FPU
+    // unit such as ARM Cortex-R series or external 32-bit DSPs.
+    cflags: ["-O2", "-Wall", "-Wextra", "-Wmacro-redefined"],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "liblhdcv5dec",
+    ],
+}
