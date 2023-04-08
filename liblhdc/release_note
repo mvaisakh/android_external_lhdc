@@ -1,0 +1,57 @@
+Release Note.
+=========================================================
+2022/09/14
+1. Upgrade LHDCV4 encoder version to V4.0.6p1
+(1)Fix that number of frame-per-packet does not be changed by LLAC ABR(LHDC ABR ok).
+
+2022/07/20
+1. Upgrade LHDCV4 encoder version to V4.0.6
+
+2022/04/18
+1. Upgrade LHDCV4 encoder version to V4.0.4
+
+2021/11/15
+1. Add to print LHDC version and build time.
+2. Fix wrong AR effect.
+3. Fix when running LLAC, BT may crash after toggling AR UI on/off.
+
+2021/7/21
+Modify the calculation method to correct the number of frames per packet.
+
+2021/7/16
+Add AR version log on create.
+
+2021/7/6
+Add AR v1.1a.14 function.
+
+2021/7/5
+Add AR v1.1a.13 function.
+Support LHDCV4 AR on/off from app
+
+2021/7/1
+Add AR switch form app.
+
+2021/6/29
+Add AR v1.1a function.
+
+2021/3/12
+Update LHDC algorithm.
+
+2021/2/26
+Remove GPL license module.
+
+2020/7/10
+Fixed issue: The size of the encoded frame exceeded expectations.
+
+2020/5/28
+Updating the core of encoder to improve performance.
+
+2020/4/30
+1. Modify the frame size calculation method and refer to the encoding interval time so that the output size of 48KHz/24bits & LL enabled is lower than the packet size of 2DH3.
+
+2020/4/14
+1. Add new function to evaluate frame size and number of frames in a packet.
+2. Fix frame size evaluate not exactly.
+
+2020/3/9
+LHDC encoder library for android 10 r2 on MTK platform.
